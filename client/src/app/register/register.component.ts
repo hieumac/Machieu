@@ -17,11 +17,11 @@ export class RegisterComponent implements OnInit {
   }
 
   register() {
-    this.accountService.register(this.model).subscribe(response => {
-      console.log(response);
+    this.accountService.register(this.model).subscribe(respone => {
+      console.log(respone);
       this.cancel();
     }, error => {
-      console.log(error);
+      console.log(error);  
       this.toastr.error(error.error);
     })
   }
@@ -29,5 +29,4 @@ export class RegisterComponent implements OnInit {
   cancel() {
     this.cancelRegister.emit(false);
   }
-
 }
