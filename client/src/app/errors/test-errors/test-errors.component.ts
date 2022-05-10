@@ -9,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class TestErrorsComponent implements OnInit {
   baseUrl = 'https://localhost:5001/api/';
   validationErrors: string[] = [];
+
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
@@ -22,7 +23,7 @@ export class TestErrorsComponent implements OnInit {
     })
   }
 
-    get400Error() {
+  get400Error() {
     this.http.get(this.baseUrl + 'buggy/bad-request').subscribe(response => {
       console.log(response);
     }, error => {
@@ -30,7 +31,7 @@ export class TestErrorsComponent implements OnInit {
     })
   }
 
-    get500Error() {
+  get500Error() {
     this.http.get(this.baseUrl + 'buggy/server-error').subscribe(response => {
       console.log(response);
     }, error => {
@@ -38,7 +39,7 @@ export class TestErrorsComponent implements OnInit {
     })
   }
 
-    get401Error() {
+  get401Error() {
     this.http.get(this.baseUrl + 'buggy/auth').subscribe(response => {
       console.log(response);
     }, error => {
@@ -46,7 +47,7 @@ export class TestErrorsComponent implements OnInit {
     })
   }
 
-    get400ValidationError() {
+  get400ValidationError() {
     this.http.post(this.baseUrl + 'account/register', {}).subscribe(response => {
       console.log(response);
     }, error => {
