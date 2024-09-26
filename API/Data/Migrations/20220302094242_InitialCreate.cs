@@ -2,7 +2,7 @@
 
 namespace API.Data.Migrations
 {
-    public partial class IntitialCreate : Migration
+    public partial class InitialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
